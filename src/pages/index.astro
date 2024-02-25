@@ -1,0 +1,47 @@
+---
+import { AppLayout } from "@/components/layouts";
+import { MainVisual } from "@/components/pages";
+const mvImage = await import(`@/assets/images/top_firstview.jpg`);
+
+const meta = {
+  title: "Top",
+};
+
+const mainVisual = {
+  heading: "WEB DESIGN SPECIALIST",
+  img: {
+    src: mvImage.default,
+    alt: "TOPページのメインビジュアル",
+  },
+};
+---
+
+<AppLayout {meta}>
+  <MainVisual {...mainVisual} />
+  <div class="l-contents">
+    <div class="l-contents__wide">
+      <div class="l-contents__section">
+        <section class="l-sectionTop">
+          <h2 class="c-heading01">
+            <span class="jp">見出し 日本語</span><span class="en">title EN</span
+            >
+          </h2>
+          <p>
+            本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+          </p>
+        </section>
+      </div>
+      <div class="l-contents__section">
+        <section class="l-sectionTop">
+          <h2 class="c-heading01">
+            <span class="jp">見出し 日本語</span><span class="en">title EN</span
+            >
+          </h2>
+          <p>
+            本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</AppLayout>

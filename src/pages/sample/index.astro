@@ -1,0 +1,31 @@
+---
+import { Accordions, SingleAccordions } from "@/components/elements";
+import { AppLayout } from "@/components/layouts";
+
+const meta = {
+  title: "Sample",
+};
+---
+
+<AppLayout {meta}>
+  <div class="l-contents">
+    <div class="l-contents__wide">
+      <Accordions
+        items={[
+          { trigger: "Multi Mode Trigger", panel: "Multi Mode Panel" },
+          {
+            trigger: "Multi Mode Trigger",
+            panel: "Multi Mode Panel",
+            defaultOpen: true,
+          },
+        ]}
+      />
+      <SingleAccordions
+        items={[
+          { trigger: "Single Mode Trigger", panel: "Single Mode Panel" },
+          { trigger: "Single Mode Trigger", panel: "Single Mode Panel" },
+        ]}
+      />
+    </div>
+  </div>
+</AppLayout>

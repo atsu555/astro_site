@@ -1,0 +1,15 @@
+@charset "utf-8";
+@use "../global" as *;
+
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  background: $color_white;
+  border: 1px solid $color_black;
+
+  @include fz(13);
+}

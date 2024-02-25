@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use "../global" as *;
+
+.c-form__input {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: $color_white;
+  border: 1px solid $color_primary;
+}
+
+.c-form__select {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: $color_white;
+  border: 1px solid $color_primary;
+}
+
+.c-form__textarea {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: $color_white;
+  border: 1px solid $color_primary;
+}

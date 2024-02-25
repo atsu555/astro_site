@@ -1,0 +1,45 @@
+---
+type Item = {
+  trigger: string;
+  panel: string;
+  defaultOpen?: boolean;
+};
+
+export type Props = {
+  items: Item[];
+};
+
+const { items } = Astro.props;
+---
+
+<div class="accordions js-accordions">
+  {
+    items.map(({ trigger, panel, defaultOpen = false }) => (
+      <dl class="accordion js-accordion" data-default-open={`${defaultOpen}`}>
+        <button
+          type="button"
+          class="accordion__trigger js-accordion-trigger"
+          aria-expanded={`${defaultOpen}`}
+        >
+          {trigger}
+        </button>
+        <dd
+          class="accordion__panel js-accordion-panel"
+          aria-hidden={`${!defaultOpen}`}
+        >
+          <div class="accordion__panelInner">{panel}</div>
+        </dd>
+      </dl>
+    ))
+  }
+</div>
+
+<script>
+  import { Accordions } from "./script";
+
+  const wrappers = document.querySelectorAll<HTMLDivElement>(".js-accordions");
+  for (const wrapper of wrappers) {
+    const accordions = new Accordions(wrapper);
+    accordions.init();
+  }
+</script>

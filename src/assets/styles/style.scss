@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+// Foundation
+@use "foundation";
+
+// Component
+@use "component/button";
+@use "component/grid";
+@use "component/hamburger";
+@use "component/heading";
+@use "component/mainVisual";
+@use "component/form";
+
+// Layout
+@use "layout/breadcrumb";
+@use "layout/columns";
+@use "layout/container";
+@use "layout/contents";
+@use "layout/footer";
+@use "layout/globalNav";
+@use "layout/header";
+@use "layout/linkSkip";
+@use "layout/pagetop";
+@use "layout/section";
+@use "layout/sectionTop";
+@use "layout/sub";
+
+// Project
+@use "project/entry";
+@use "project/accordion";
+
+// tailwind
+@use "tailwindcss/utilities";

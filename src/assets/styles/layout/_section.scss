@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use "../global" as *;
+
+.l-section {
+  width: 100%;
+  background: $color_lightgray;
+}
+
+.l-section__wide {
+  @include content_width(wide);
+}
+
+.l-section__narrow {
+  @include content_width(narrow);
+}
+
+.l-section__body {
+  margin-top: 20px;
+
+  @include mq(md) {
+    margin-top: 40px;
+  }
+}

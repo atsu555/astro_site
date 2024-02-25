@@ -1,0 +1,17 @@
+---
+import { Header, Footer, Document } from "@/components/layouts";
+import type { ComponentProps } from "@/types";
+
+export type Props = ComponentProps<typeof Document>;
+
+const props = Astro.props;
+---
+
+<Document {...props}>
+  <a href="#start-of-content" class="l-linkSkip">メインコンテンツにスキップ</a>
+  <Header />
+  <main id="start-of-content" class="">
+    <slot />
+  </main>
+  <Footer />
+</Document>

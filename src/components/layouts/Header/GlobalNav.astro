@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"nav"> & {
+  nav: {
+    name: string;
+    path: string;
+  }[];
+};
+
+const { nav, ...props } = Astro.props;
+---
+
+<nav
+  id="js-hamburger-menu"
+  class="l-globalNav"
+  aria-label="global navigation"
+  aria-hidden="false"
+  {...props}
+>
+  <ul class="l-globalNav__list">
+    {
+      nav.map(({ name, path }) => (
+        <li class="l-globalNav__item">
+          <a href={path} class="l-globalNav__link">
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

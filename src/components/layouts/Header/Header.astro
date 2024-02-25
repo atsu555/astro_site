@@ -1,0 +1,51 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import styles from "./header.module.scss";
+
+import { HamburgerButton, GlobalNav } from "@/components/layouts";
+import { getPath } from "@/utils";
+
+const nav = [
+  {
+    name: "NEWS",
+    path: getPath.home(),
+  },
+  {
+    name: "SERVICE",
+    path: getPath.sample(),
+  },
+  {
+    name: "WORKS",
+    path: getPath.sample(),
+  },
+  {
+    name: "RECRUIT",
+    path: getPath.sample(),
+  },
+  {
+    name: "CONTACT",
+    path: getPath.contact(),
+  },
+];
+---
+
+<header class={styles.header}>
+  <div class={styles.inner}>
+    <div class={styles.logo} title="トップページへ戻る">
+      <a href={getPath.home()} class={styles.logoLink}>
+        <Image
+          src={import("@/assets/images/common/logo.svg")}
+          alt="PON DESIGN"
+          width={160}
+          height={17}
+          class={styles.logoImage}
+        />
+      </a>
+    </div>
+    <GlobalNav nav={nav} />
+  </div>
+  <div>
+    <HamburgerButton />
+  </div>
+</header>

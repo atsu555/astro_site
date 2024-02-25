@@ -1,0 +1,54 @@
+@charset "utf-8";
+@use "../global" as *;
+
+.l-globalNav {
+  @include mq(md, max) {
+    position: fixed;
+    top: $header_height_sp;
+    left: 0;
+    width: 100%;
+    height: calc(100% - #{$header_height_sp});
+    padding: 20px;
+    background-color: $color_white;
+    transition: opacity 0.25s, visibility 0.25s;
+  }
+
+  &[aria-hidden="true"] {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.l-globalNav__list {
+  @include mq(md) {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+  }
+}
+
+.l-globalNav__item {
+  @include line_height(20, 14);
+  @include fz(14);
+
+  @include mq(md) {
+    @include fz(16);
+  }
+}
+
+.l-globalNav__itemLink {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+
+  @include mq(md) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include hover {
+    text-decoration: underline;
+  }
+}

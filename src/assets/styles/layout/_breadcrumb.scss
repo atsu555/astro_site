@@ -1,0 +1,48 @@
+@charset "utf-8";
+@use "../global" as *;
+
+.l-breadcrumb {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.l-breadcrumb__list {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+
+  @include content_width(wide);
+}
+
+.l-breadcrumb__item {
+  @include line_height(20, 14);
+  @include fz(14);
+
+  &:nth-child(n + 2) {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      content: "";
+      border-top: 2px solid $color_darkgray;
+      border-right: 2px solid $color_darkgray;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:last-child {
+    @include font_weight_bold;
+  }
+}
+
+.l-breadcrumb__itemLink {
+  text-decoration: none;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}

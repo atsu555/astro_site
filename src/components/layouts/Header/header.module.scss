@@ -1,0 +1,38 @@
+@charset "utf-8";
+@use "@/assets/styles/global" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  color: $color_white;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+
+  @include content_width(wide);
+}
+
+.logo {
+  // style
+}
+
+.logoLink {
+  display: block;
+
+  @include hover_opacity;
+}
+
+.logoImage {
+  display: block;
+  width: 160px;
+  height: 17px;
+
+  @include object_fit(contain);
+}
